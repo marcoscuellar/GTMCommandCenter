@@ -7,7 +7,7 @@ Owner: Marcos (marcosmcuellar@gmail.com). He has severe ADHD, so always reply wi
 - One-file web app: `index.html` (~511 KB). React 19, already built and minified, with all CSS and JS inline. There is no build step and nothing to install.
 - It is a GTM "command center" for one operator who runs several product lines (brands): IZTIC, OLLIN OS, OLLIN GO, NÈNÈMI, CUEPA, plus user-added ones like Chantli.
 - All data lives in the browser's `localStorage`. There is no backend.
-- Version 50 lives at claude.ai as a private Artifact: https://claude.ai/code/artifact/af54616c-24a7-44db-8bb8-85905e04454d
+- Version 51 is in this repo (adds Export / Import data). Version 50 lives at claude.ai as a private Artifact: https://claude.ai/code/artifact/af54616c-24a7-44db-8bb8-85905e04454d
 - Next goal: deploy to Vercel as a static site (see "Deploy").
 
 ## Files
@@ -107,10 +107,16 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
   - The dropzone UI is wrapped in `.pf-files` and only shows when adding, not editing.
   - On submit: `addBrand(...)`, then `addFiles(newBrand.id, xF)`. That also writes an "Added N files" log line.
   - Upload errors after creating the project are currently swallowed. **TODO:** surface them.
+- **v51, Export / Import data** (footer, next to Reset).
+  - Component `Bkx` in the footer (`Ev`). Storage object `wn` gained `exportData()` and `importData(obj)`.
+  - Export downloads `gtm-command-center-backup-YYYY-MM-DD.json` (same shape as the localStorage value: `{v, savedAt, data}`).
+  - Import checks the file (must have `data.targets`/`data.tasks` arrays and `v === 8`), asks to confirm, writes localStorage, clears the pending save, then reloads.
+  - Bad files show "⚠ Import failed: …" in the footer.
+  - Note: inside claude.ai the sandbox may block downloads; it works on Vercel / `file://`.
 
 ## Ideas / backlog (confirm with Marcos before building)
 
-1. Export/import all data as JSON (needed for the Vercel move).
+1. ~~Export/import all data as JSON~~ (done in v51).
 2. Show file-upload errors from the Add project form.
 3. Optional sync backend (e.g. Vercel KV or Supabase) so data follows him across devices.
 4. Rebuild as a real source project (Vite + React + TS) so future edits aren't bundle patches.
