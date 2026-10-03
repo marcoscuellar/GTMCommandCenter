@@ -137,6 +137,12 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
 
 - **v55, dark file dropzone (light mode).** `.dropzone` is `#111318` with white text, and goes black on hover/drag-over. It applies to the card and the Add project form.
 
+- **v56, uniform board cards with a colored bottom band, and stronger shadows.**
+  - The hero (TODAY) card no longer spans 2×2. On ≥701px, `grid-auto-rows:1fr` makes every card the same height (skipped while a card is open, via `:has`).
+  - The hero's Bottleneck/Log/Up-next block (`.face-hero`) is hidden on the closed card. It's still in the opened card.
+  - The bottom band (`.face-desc`, `.face-more`, `.face-foot`, plus the hero's `.hero-quick`) is filled with the card's brand color `--band`, set inline per card. Text uses the brand's readable `--band-ink`. Dark `#111318` is the fallback.
+  - Shadows are stronger: 3-layer resting, deeper on hover.
+
 ## Ideas / backlog (confirm with Marcos before building)
 
 1. ~~Export/import all data as JSON~~ (done in v51).
