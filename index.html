@@ -39,6 +39,10 @@
 .sys-card.open .log-panel{height:100%}
 .sys-card.open .log-list{max-height:none;flex:1}
 }
+/* v55 dark dropzone in light mode */
+[data-theme=light] .dropzone{background:#111318;border:1px solid #111318;color:#ffffff}
+[data-theme=light] .dropzone .dim{color:#c9ced6}
+[data-theme=light] .dropzone:hover,[data-theme=light] .dropzone[data-over=true]{background:#000000;border-color:#000000;color:#ffffff;box-shadow:0 0 0 3px rgba(17,19,24,.18)}
 /* mobile pass: opened system card */
 @media(max-width:700px){
 .sys-card.open .sys-head{grid-template-columns:14px minmax(0,1fr) auto 12px;gap:10px;align-items:center}

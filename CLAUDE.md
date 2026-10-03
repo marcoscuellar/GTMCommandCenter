@@ -135,6 +135,8 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
   - Desktop (≥901px): two equal columns. The left side is a 2-col grid (Mission | Bottleneck; Files, Queue and actions span the full width). The Digital log fills the right column at full height.
   - Mobile: a single stacked column (the existing rules).
 
+- **v55, dark file dropzone (light mode).** `.dropzone` is `#111318` with white text, and goes black on hover/drag-over. It applies to the card and the Add project form.
+
 ## Ideas / backlog (confirm with Marcos before building)
 
 1. ~~Export/import all data as JSON~~ (done in v51).
