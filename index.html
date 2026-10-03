@@ -14,6 +14,8 @@
 .sys-card[data-hero=true].open .sys-head{padding-right:110px}
 
 .backup-ctl{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}.backup-msg{font-size:13.5px;max-width:320px;overflow-wrap:anywhere}
+/* readability: scale whole app up on desktop */
+@media (min-width:1100px){html{zoom:1.12}}
 /* mobile pass: opened system card */
 @media(max-width:700px){
 .sys-card.open .sys-head{grid-template-columns:14px minmax(0,1fr) auto 12px;gap:10px;align-items:center}
