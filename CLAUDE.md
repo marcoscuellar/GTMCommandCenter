@@ -151,6 +151,16 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
   - The font is Inter, from Google Fonts in `<head>`, set via `--font`.
   - This replaces v56's colored bottom half.
 
+- **v58, motion.dev interactions (subtle).**
+  - motion v12.43.0 is inlined as a `<script>` (window.Motion) before `</body>`, followed by a small app script.
+  - The app script uses a MutationObserver on `#root` to bind new elements:
+    - Board cards: spring hover lift (y -3, scale 1.004). The "+" rotates 90°. Press scales to .988.
+    - `.btn`: hover y -1, press .97.
+    - Entrance: cards and task/target/hunt cards fade and rise 10px, staggered 35ms.
+    - Opened-card tiles fade in, staggered.
+  - Bound elements get class `.mo` (CSS stops transitioning `transform`, so motion owns it).
+  - Turned off under `prefers-reduced-motion`.
+
 ## Ideas / backlog (confirm with Marcos before building)
 
 1. ~~Export/import all data as JSON~~ (done in v51).
