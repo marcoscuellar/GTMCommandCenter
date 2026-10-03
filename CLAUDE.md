@@ -143,6 +143,14 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
   - The bottom band (`.face-desc`, `.face-more`, `.face-foot`, plus the hero's `.hero-quick`) is filled with the card's brand color `--band`, set inline per card. Text uses the brand's readable `--band-ink`. Dark `#111318` is the fallback.
   - Shadows are stronger: 3-layer resting, deeper on hover.
 
+- **v57, uniform cards and the Inter font** (Marcos picked "dark with color stripe").
+  - The closed-card description (`.face-desc`) is white, fixed at 2 lines (`height:3.2em`, clamped).
+  - `.face-next` is fixed at 2 lines, so every card has an identical layout.
+  - Only the "Open NAME" strip (`.face-more` + `.face-foot`) is dark (`--dk #111318`, dark mode `#1d1e24`). It has a 5px brand-color top stripe (`var(--band)`).
+  - The hero's quick-log input is hidden on the closed card.
+  - The font is Inter, from Google Fonts in `<head>`, set via `--font`.
+  - This replaces v56's colored bottom half.
+
 ## Ideas / backlog (confirm with Marcos before building)
 
 1. ~~Export/import all data as JSON~~ (done in v51).
