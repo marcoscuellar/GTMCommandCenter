@@ -130,6 +130,11 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
   - Glass tokens (`--glass-shadow*`, `--glass-line*`) are tuned for light mode, so task, target and hunt cards match.
   - Motion is turned off under `prefers-reduced-motion`.
 
+- **v54, opened card organized as bento tiles.**
+  - In `.sys-card.open .sys-panel`, each section (`.cl-ro`: mission, bottleneck, files, open queue) and the `.log-panel` is a bordered tile with a bold underlined label (`.cl-k`).
+  - Desktop (≥901px): two equal columns. The left side is a 2-col grid (Mission | Bottleneck; Files, Queue and actions span the full width). The Digital log fills the right column at full height.
+  - Mobile: a single stacked column (the existing rules).
+
 ## Ideas / backlog (confirm with Marcos before building)
 
 1. ~~Export/import all data as JSON~~ (done in v51).
