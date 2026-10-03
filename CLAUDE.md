@@ -116,8 +116,11 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
 
 - **v52, readability pass.**
   - Every CSS `font-size` from 9px to 14px went up about 1.5–2px (9→11, 10→12, 11→13, 12→13.5, 13→14.5, 14→15). Larger sizes are unchanged.
-  - `--muted`/`--dim` are brighter: dark mode `#b9bdc5`/`#9ca3af`, light mode `#334155`/`#475569`.
-  - Desktop only: `@media (min-width:1100px){html{zoom:1.12}}` scales the whole app up 12%.
+  - Contrast pass (Marcos: "darker, not bigger"). There is no zoom.
+  - Light mode: cards (`--slab`, `--slab-raised`) are pure white `#ffffff`, and `--slab-deep` is `#f7f8fa`.
+  - Light mode text: `--text #0a0a0a`, `--muted #1f2937`, `--dim #374151`, `--line #cbd2dc`.
+  - Light mode `.liquid` glass is forced to solid white with no blur (rule before the mobile-pass comment).
+  - Dark mode: `--muted #d1d5db`, `--dim #b4bac4`.
 
 ## Ideas / backlog (confirm with Marcos before building)
 
