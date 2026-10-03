@@ -122,6 +122,14 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
   - Light mode `.liquid` glass is forced to solid white with no blur (rule before the mobile-pass comment).
   - Dark mode: `--muted #d1d5db`, `--dim #b4bac4`.
 
+- **v53, white expandable cards and tactile depth** (from Marcos's "Modern UI/UX Design Trends" PDF).
+  - Light mode `--slab-deep` is `#ffffff`, so the opened card's panel, inputs and Next step are all white.
+  - Light mode system cards get 1px hairline borders (`#d5dbe3`) and layered ambient shadows.
+  - Hover: lift 2px. Press: `scale(.98)` and 1px down with an inset shadow. Transitions are 150ms.
+  - The open card has a black 1px border and a 3px top bar.
+  - Glass tokens (`--glass-shadow*`, `--glass-line*`) are tuned for light mode, so task, target and hunt cards match.
+  - Motion is turned off under `prefers-reduced-motion`.
+
 ## Ideas / backlog (confirm with Marcos before building)
 
 1. ~~Export/import all data as JSON~~ (done in v51).
