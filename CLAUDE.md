@@ -161,6 +161,17 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
   - Bound elements get class `.mo` (CSS stops transitioning `transform`, so motion owns it).
   - Turned off under `prefers-reduced-motion`.
 
+- **v59, frosted glass cards + board header removed.**
+  - Light (default): solid `#e9edf3` page (no glows) with see-through **white frost** cards. Gradient white→`rgba(240,243,250,.70)`, `backdrop-filter: blur(24px) saturate(1.6)`, white border, inset highlight, glossy top sheen `:after`, 18px radius.
+  - Dark: solid `#07080b` page with the same **white frost** cards. Light-theme tokens (`--text`, `--muted`, `--line`, `--accent`, `--bg`…) are re-declared on `[data-theme=dark] .sys-card/.liquid`, so text inside cards is dark. Brand-color hover glow.
+  - Both themes:
+    - "Open NAME" strip stays dark (`#121419`) with the brand stripe.
+    - Pill buttons, 10–12px rounded inputs and tiles.
+    - Brand-name chips filled with the brand color inside `.liquid`.
+  - Board route hides `.page-head` ("Independent systems. One operator." + stats): `.app[data-route="/board"] .page-head{display:none}`.
+  - Fix: `.liquid>.tl-toggle` ("▸ Activity" on target cards) is back in normal flow. Before, a general `.liquid>*{position:relative}` rule plus `right:76px` pushed it outside the card.
+  - All in the `/* v59 glass skins */` block before the mobile-pass comment. Default theme is still light.
+
 ## Ideas / backlog (confirm with Marcos before building)
 
 1. ~~Export/import all data as JSON~~ (done in v51).
