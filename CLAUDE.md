@@ -172,6 +172,13 @@ With neither mode, notes and Next step still work. The AI buttons just explain h
   - Fix: `.liquid>.tl-toggle` ("▸ Activity" on target cards) is back in normal flow. Before, a general `.liquid>*{position:relative}` rule plus `right:76px` pushed it outside the card.
   - All in the `/* v59 glass skins */` block before the mobile-pass comment. Default theme is still light.
 
+- **v60, dark mode: fully white cards** (Marcos; applies his design-trends PDF).
+  - Dark-mode cards are solid `#ffffff` (no frost gradient, no blur). Opened-card tiles are white too.
+  - Shadow: crisp 1px white edge plus a 3-layer ambient shadow.
+  - The "Open NAME" strip is white in dark mode (`--dk #fff`, ink `#0a0a0a`, meta `#374151`), with a 1px `#e3e7ec` hairline. The 5px brand stripe is kept as the card's single accent.
+  - Press shows an inset shadow.
+  - Light mode unchanged (frost cards + dark strip).
+
 ## Ideas / backlog (confirm with Marcos before building)
 
 1. ~~Export/import all data as JSON~~ (done in v51).
